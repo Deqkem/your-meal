@@ -1,0 +1,112 @@
+html {
+  --container: 300px;
+  /* переменная для хранения размера контейнера */
+  --padding-container: 10px;
+  /* переменная для хранения отступа */
+  box-sizing: border-box;
+  position: relative;
+  /* убираем горизонтальный скрол, который появляется из-за скролл меню */
+  overflow-x: hidden;
+  /* убираем горизонтальный скрол, который появляется из-за скролл меню */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  /* делаем свойство наследуемым, чтобы при подключении плагинов оно не сбивалось */
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #F9F9F9;
+  color: black;
+
+  position: relative;
+  /* убираем горизонтальный скрол, который появляется из-за скролл меню */
+  overflow-x: hidden;
+  /* убираем горизонтальный скрол, который появляется из-за скролл меню */
+}
+
+img,
+svg {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* класс для сокрытия элементов, на сайте его не видно, но роботы поисковики его видят */
+.vissualy-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+.container {
+  max-width: calc(var(--container) + var(--padding-container) * 2);
+  padding: 0 var(--padding-container);
+  margin: 0 auto;
+}
+
+.currency {
+  font-weight: 400;
+}
+
+@media (min-width: 480px) {
+  html {
+    --container: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  html {
+    --padding-container: 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    --container: 960px;
+    --padding-container: 32px;
+  }
+}
+
+@media (min-width: 1360px) {
+  html {
+    --container: 1290px;
+  }
+}

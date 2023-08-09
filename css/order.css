@@ -1,0 +1,258 @@
+.order {
+  position: relative;
+}
+
+.order__wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  border-radius: 12px;
+  background: #FFF;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.16);
+  padding: 16px 10px;
+}
+
+.order__wrap-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+}
+
+.order__wrap-title:after {
+  content: '';
+  position: absolute;
+  outline: 3px solid transparent;
+  inset: 0;
+  border-radius: 12px;
+  pointer-events: none;
+  /* делаем элемент недоступным для событий мыши, но видимым */
+}
+
+.order__wrap-title:focus-visible:after {
+  outline-color: #FFAB08;
+}
+
+.order_open .order__wrap-title {
+  margin-bottom: 8px;
+}
+
+.order__title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.order__count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 16px;
+  border-radius: 6px;
+  background: #F2F2F3;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.order__wrap_list {
+  display: none;
+}
+
+.order_open .order__wrap_list {
+  display: block;
+}
+
+.order__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 0;
+  border-bottom: 1px solid #F2F2F3;
+}
+
+.order__item:first-child {
+  border-top: 1px solid #F2F2F3;
+}
+
+.order__image {
+  width: 64px;
+  height: 52px;
+  border-radius: 8px;
+}
+
+.order__product {
+  flex-grow: 1;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.order__product-title {
+  font-weight: 400;
+  margin-bottom: 1px;
+}
+
+.order__product-weight {
+  color: #B1B1B1;
+  margin-bottom: 6px;
+}
+
+.order__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 130%;
+  margin-bottom: 19px;
+}
+
+.order__list {
+  margin-bottom: 13px;
+}
+
+.order__submit {
+  width: 100%;
+  padding: 9px;
+  border-radius: 8px;
+  background: #FF7020;
+  color: #FFF;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  margin-bottom: 8px;
+  transition: transform .1s ease, background-color .3s ease-in-out;
+}
+
+.order__submit:hover {
+  background-color: #FFAB08;
+}
+
+.order__submit:focus-visible {
+  background-color: #F86310;
+  outline: none;
+}
+
+.order__submit:active {
+  transform: translate(1px, 2px);
+}
+
+.order__submit:disabled {
+  background-color: #F9F9F9;
+  color: #ACACAC;
+}
+
+@supports not selector(:focus-visible) {
+  .order__submit:focus {
+    background-color: #F86310;
+    outline: none;
+  }
+}
+
+.order__wrap-appeal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order__appeal {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-left: 32px;
+  background-image: url(../img/delivery.png);
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: left;
+}
+
+.order__close {
+  color: #B1B1B1;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.order__empty {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+@media (min-width: 768px) {
+  .order {
+    width: 145px;
+    transition: width 0.06 ease-in-out;
+  }
+
+  .order.order_open {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .order {
+    width: 300px;
+  }
+
+  .order__wrapper {
+    position: unset;
+    padding: 24px 16px;
+  }
+
+  .order__wrap_title {
+    margin-bottom: 12px;
+    pointer-events: none;
+  }
+
+  .order__wrap-title:after {
+    content: none;
+  }
+
+  .order__title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .order__count {
+    width: 41px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .order__item {
+    padding: 15px 0;
+  }
+
+  .order__total {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  .order__submit {
+    padding: 11px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .order__wrap_list {
+    display: block;
+  }
+
+  .order__list {
+    margin-bottom: 16px;
+  }
+
+  .order__close {
+    display: none;
+  }
+
+  .order__appeal {
+    font-size: 12px;
+  }
+}

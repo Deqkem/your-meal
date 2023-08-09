@@ -1,0 +1,59 @@
+/* модальные окна  */
+.modal {
+	position: fixed;                           /* растягиваем на весь экран */
+	inset: 0;                                  /* растягиваем на весь экран */
+	background: rgba(0, 0, 0, 0.80);
+	cursor: pointer;
+	overflow-y: auto;                          /* окно будет скролиться по вертикали */
+	display: none;
+}
+
+.modal_open {
+	display: flex;
+}
+
+.modal__main {
+	position: relative;
+	cursor: default;
+	margin: auto;
+}
+
+.modal__close {
+	color: #B1B1B1;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	outline: solid 1px transparent;
+	outline-offset: 3px;
+	border-radius: 3px;
+	transition: color .1s ease-in-out;
+}
+
+.modal__close:focus-visible {
+	color: #FF7020;
+	outline-color: #FF7020;
+}
+
+.modal__close:hover {
+	color: #FF7020;
+}
+
+@media (min-width: 480px) {
+	.modal {
+		padding: 10px;
+	}
+}
+
+@media (min-width: 768px) {
+	.modal__close {
+		top: 16px;
+		right: 16px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.modal__close {
+		top: 24px;
+		right: 24px;
+	}
+}
