@@ -6,6 +6,7 @@
 	cursor: pointer;
 	overflow-y: auto;                          /* окно будет скролиться по вертикали */
 	display: none;
+	z-index: 2;
 }
 
 .modal_open {
